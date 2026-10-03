@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 2,
+  "observedAt": "2026-10-03",
+  "cline": {
+    "vscode": { "tag": "v4.1.22", "shortSha": "f58bc11" },
+    "desktop": { "tag": "desktop-v0.0.43", "shortSha": "476b165" },
+    "sdk": { "tag": "sdk/sdk/v0.0.90", "version": "0.0.90", "shortSha": "a7ad50b" }
+  },
+  "requiredSurfaces": [
+    "ProviderSettingsManager.getProviderSettings",
+    "ProviderConfigStore.readSelection",
+    "ProviderConfigStore.commitSelection",
+    "SdkSessionLifecycle.getActiveSession",
+    "SdkSessionLifecycle.updateActiveSessionModel",
+    "SdkHost.updateSessionModel(sessionId, modelId)",
+    "HostCatalog.listModels",
+    "ModelRuntime.invoke",
+    "messages-contract-v1"
+  ],
+  "runtimePolicy": {
+    "preferLiveSessionModelSwitch": true,
+    "providerConfigStoreSynchronizesUiAndDefaults": true,
+    "hostCatalogIsPrimary": true,
+    "officialFreeFeedIsFallback": true,
+    "failClosedOnStructuralDrift": true,
+    "failClosedDuringRunningTurn": true,
+    "preserveSessionIdAcrossHandoff": true,
+    "neverPersistOAuthTokens": true
+  }
+}

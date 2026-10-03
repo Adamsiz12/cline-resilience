@@ -1,0 +1,25 @@
+{
+  "name": "cline-resilience",
+  "version": "0.5.0",
+  "private": true,
+  "type": "module",
+  "description": "Cline resilience + continuity layer with pinned upstream bridges for model selection, auth identity, catalog sync and session recovery.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "demo": "npm run build && node dist/examples/demo.js",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "models:free": "npm run build && node dist/examples/list-free-models.js",
+    "settings:demo": "npm run build && node dist/examples/settings-demo.js",
+    "test:host-smoke": "tsc -p tsconfig.json && node dist/examples/practical-host-smoke.js",
+    "test:practical": "npm run build && node --test tests/host-e2e.test.mjs tests/live-session-integration.test.mjs && node dist/examples/practical-host-smoke.js",
+    "verify:cline-checkout": "node scripts/verify-cline-checkout.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.9.3"
+  }
+}
